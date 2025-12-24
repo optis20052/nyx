@@ -1,0 +1,29 @@
+Source: nyx
+Section: utils
+Priority: optional
+Maintainer: Ali <your.email@example.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-pyqt6
+Standards-Version: 4.6.0
+Homepage: https://github.com/yourusername/nyx
+
+Package: nyx
+Architecture: all
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         python3-pyqt6,
+         python3-yaml,
+         systemd
+Description: Nyx - Manage systemd services from the system tray
+ Nyx is a Qt-based system tray application that allows you to
+ easily manage systemd services from your desktop. Features include:
+  * Start, stop, and restart services from the tray
+  * Real-time status monitoring with visual indicators
+  * Desktop notifications for status changes
+  * View systemd logs
+  * Support for both user and system services
+  * Customizable icons for each service
+  * Optional passwordless mode using PolicyKit

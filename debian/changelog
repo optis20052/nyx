@@ -1,0 +1,12 @@
+nyx (1.0.0) unstable; urgency=medium
+
+  * Initial release
+  * System tray icon for managing systemd services
+  * Support for user and system services
+  * Real-time status monitoring
+  * Desktop notifications
+  * Custom icons support
+  * Passwordless mode with PolicyKit
+  * Service management window
+
+ -- Ali <your.email@example.com>  Mon, 23 Dec 2024 21:00:00 +0000

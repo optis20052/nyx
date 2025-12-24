@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Nyx
+GenericName=System Service Manager
+Comment=Manage systemd services from the system tray
+Exec=nyx
+Icon=nyx
+Terminal=false
+Categories=System;Monitor;Qt;
+Keywords=systemd;services;tray;system;manager;nyx;
+StartupNotify=false
+StartupWMClass=Nyx
+X-KDE-Autostart=true

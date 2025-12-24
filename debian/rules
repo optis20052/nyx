@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+export PYTHONPATH := /usr/lib/python3/dist-packages:$(PYTHONPATH)
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_clean:
+	@echo "Skipping clean step to avoid setuptools import issue"
+	rm -rf build dist *.egg-info
+	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true

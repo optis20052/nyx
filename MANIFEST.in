@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include systemd-tray.desktop
+recursive-include systemd_tray/resources *
+recursive-include systemd_tray *.py
