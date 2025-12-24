@@ -1,6 +1,10 @@
-# Nyx
+<div align="center">
+  <img src="nyx/resources/icons/nyx.svg" alt="Nyx Logo" width="128" height="128">
 
-A modern system tray application for managing systemd services. Built with PyQt6 and tested on KDE Plasma and GNOME.
+  # Nyx
+
+  A modern system tray application for managing systemd services. Built with PyQt6 and tested on KDE Plasma and GNOME.
+</div>
 
 ## Features
 
