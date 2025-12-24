@@ -231,7 +231,7 @@ class NyxApp(QObject):
         """Handle add service action from main tray icon."""
         from .ui.dialogs.add_service import AddServiceDialog
 
-        dialog = AddServiceDialog()
+        dialog = AddServiceDialog(parent=self.main_window)
         if dialog.exec():
             service_config = dialog.get_service_config()
             self.add_service(service_config)
@@ -240,7 +240,7 @@ class NyxApp(QObject):
         """Show settings dialog from tray icon."""
         from .ui.dialogs.settings import SettingsDialog
 
-        dialog = SettingsDialog(self.config_manager, None)
+        dialog = SettingsDialog(self.config_manager, self.main_window)
         if dialog.exec():
             # Settings were saved, trigger update
             self._on_settings_changed()
@@ -581,8 +581,8 @@ class NyxApp(QObject):
             logger.error(f"Service config not found for {service_name}")
             return
 
-        # Show log viewer dialog
-        dialog = LogViewerDialog(service_config, self.service_manager)
+        # Show log viewer dialog (use main window as parent to prevent app quit)
+        dialog = LogViewerDialog(service_config, self.service_manager, parent=self.main_window)
         dialog.exec()
 
     def _on_edit_requested(self, service_name: str, service_type: str):
@@ -603,18 +603,17 @@ class NyxApp(QObject):
             logger.error(f"Service config not found for {service_name}")
             return
 
-        # Show edit dialog
-        dialog = EditServiceDialog(service_config)
+        # Show edit dialog (use main window as parent to prevent app quit)
+        dialog = EditServiceDialog(service_config, parent=self.main_window)
         if dialog.exec():
             updated_config = dialog.get_service_config()
             self.config_manager.update_service(service_name, service_type, updated_config)
 
-            # Update tray icon
+            # Update tray icon in place (don't remove/recreate to avoid app quit)
             key = (service_name, service_type)
             if key in self.tray_icons:
-                # Remove old and create new with updated config
-                self._remove_tray_icon(service_name, service_type)
-                self._create_tray_icon(updated_config)
+                self.tray_icons[key].update_config(updated_config)
+                logger.info(f"Updated tray icon for {updated_config.display_name}")
 
     def _on_remove_requested(self, service_name: str, service_type: str):
         """Handle remove service request.

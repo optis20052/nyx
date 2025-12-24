@@ -80,6 +80,19 @@ class ServiceTrayIcon(QSystemTrayIcon):
             self._update_tooltip()
             self._update_menu_actions()
 
+    def update_config(self, new_config: ServiceConfig):
+        """Update the service configuration and refresh the icon.
+
+        Args:
+            new_config: New service configuration
+        """
+        logger.debug(f"Updating config for {self.service_config.display_name}")
+        self.service_config = new_config
+        self._update_icon()
+        self._update_tooltip()
+        # Recreate menu to update the header with new display name
+        self._create_menu()
+
     def _create_menu(self):
         """Create the context menu for the tray icon."""
         menu = QMenu()
