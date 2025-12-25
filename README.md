@@ -19,6 +19,23 @@
 -  **Autostart Support** - Automatically start on login
 -  **Dual Service Support** - Manage both user and system services
 
+## Screenshots
+
+<div align="center">
+  <img src="nyx/resources/screen/app.png" alt="Nyx Main Window" width="600">
+  <p><em>Main management window</em></p>
+</div>
+
+<div align="center">
+  <img src="nyx/resources/screen/tray.jpg" alt="Nyx System Tray" width="400">
+  <p><em>System tray integration</em></p>
+</div>
+
+<div align="center">
+  <img src="nyx/resources/screen/add_service.jpg" alt="Add Service Dialog" width="500">
+  <p><em>Add service dialog</em></p>
+</div>
+
 ## Installation
 
 ### From .deb Package
