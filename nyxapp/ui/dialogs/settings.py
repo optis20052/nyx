@@ -86,7 +86,7 @@ class SettingsDialog(QDialog):
 
         self.autostart_checkbox = QCheckBox("Start automatically on login")
         self.autostart_checkbox.setToolTip(
-            "Automatically start Nyx when you log in to your desktop"
+            "Automatically start NyxApp when you log in to your desktop"
         )
         startup_layout.addRow("", self.autostart_checkbox)
 
@@ -218,7 +218,7 @@ class SettingsDialog(QDialog):
                     f"This will create a polkit rule to allow user '{username}' to "
                     f"manage systemd services without password.\n\n"
                     f"The rule will be created at:\n"
-                    f"/etc/polkit-1/rules.d/50-nyx-systemctl.rules\n\n"
+                    f"/etc/polkit-1/rules.d/50-nyxapp-systemctl.rules\n\n"
                     f"Do you want to continue?"
                 )
 

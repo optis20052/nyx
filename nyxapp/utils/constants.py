@@ -4,22 +4,22 @@ from pathlib import Path
 from PyQt6.QtGui import QColor
 
 # Application metadata
-APP_NAME = "Nyx"
+APP_NAME = "NyxApp"
 APP_VERSION = "1.0.0"
-ORGANIZATION_NAME = "Nyx"
+ORGANIZATION_NAME = "NyxApp"
 
 # Paths
-CONFIG_DIR = Path.home() / ".config" / "nyx"
+CONFIG_DIR = Path.home() / ".config" / "nyxapp"
 CONFIG_FILE = CONFIG_DIR / "config.yaml"
 LOG_FILE = CONFIG_DIR / "app.log"
 ICONS_DIR = CONFIG_DIR / "icons"
 
 # Application resources
 RESOURCES_DIR = Path(__file__).parent.parent / "resources"
-APP_ICON_PATH = RESOURCES_DIR / "icons" / "nyx.svg"  # Colorful icon for app window
-TRAY_ICON_PATH = RESOURCES_DIR / "icons" / "nyx-symbolic.svg"  # Simple icon for tray (fallback)
-TRAY_ICON_LIGHT_PATH = RESOURCES_DIR / "icons" / "nyx-light.svg"  # Dark icon for light theme
-TRAY_ICON_DARK_PATH = RESOURCES_DIR / "icons" / "nyx-dark.svg"  # Light icon for dark theme
+APP_ICON_PATH = RESOURCES_DIR / "icons" / "nyxapp.svg"  # Colorful icon for app window
+TRAY_ICON_PATH = RESOURCES_DIR / "icons" / "nyxapp-symbolic.svg"  # Simple icon for tray (fallback)
+TRAY_ICON_LIGHT_PATH = RESOURCES_DIR / "icons" / "nyxapp-light.svg"  # Dark icon for light theme
+TRAY_ICON_DARK_PATH = RESOURCES_DIR / "icons" / "nyxapp-dark.svg"  # Light icon for dark theme
 
 # Default settings
 DEFAULT_UPDATE_INTERVAL = 5  # seconds

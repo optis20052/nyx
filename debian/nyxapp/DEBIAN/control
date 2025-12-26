@@ -1,22 +1,12 @@
-Source: nyxapp
+Package: nyxapp
+Version: 1.0.0
+Architecture: all
+Maintainer: Ali <your.email@example.com>
+Installed-Size: 285
+Depends: python3-pyqt6, python3-yaml, python3:any, systemd
 Section: utils
 Priority: optional
-Maintainer: Ali <your.email@example.com>
-Build-Depends: debhelper-compat (= 13),
-               dh-python,
-               python3-all,
-               python3-setuptools,
-               python3-pyqt6
-Standards-Version: 4.6.0
 Homepage: https://github.com/optis20052/nyxapp
-
-Package: nyxapp
-Architecture: all
-Depends: ${python3:Depends},
-         ${misc:Depends},
-         python3-pyqt6,
-         python3-yaml,
-         systemd
 Description: NyxApp - Manage systemd services from the system tray
  NyxApp is a Qt-based system tray application that allows you to
  easily manage systemd services from your desktop. Features include:

@@ -3,7 +3,6 @@
 
 import sys
 import logging
-from pathlib import Path
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import QSharedMemory
@@ -13,7 +12,7 @@ from .app import NyxApp
 from .utils.constants import APP_NAME, APP_ICON, APP_ICON_PATH, CONFIG_DIR, LOG_FILE, ORGANIZATION_NAME
 
 # Server name for IPC
-IPC_SERVER_NAME = "nyx_ipc_server"
+IPC_SERVER_NAME = "nyxapp_ipc_server"
 
 
 def setup_logging():
@@ -43,7 +42,7 @@ def check_single_instance() -> QSharedMemory:
     Returns:
         QSharedMemory instance if this is the only instance, None otherwise
     """
-    shared_memory = QSharedMemory("NyxUniqueKey")
+    shared_memory = QSharedMemory("NyxAppUniqueKey")
 
     if not shared_memory.create(1):
         # Another instance is already running - send message to show window
@@ -235,7 +234,7 @@ def main():
     qt_app.setApplicationName(APP_NAME)  # This sets WM_CLASS
     qt_app.setApplicationDisplayName(APP_NAME)
     qt_app.setOrganizationName(ORGANIZATION_NAME)
-    qt_app.setDesktopFileName("nyx")  # Must match the .desktop file name
+    qt_app.setDesktopFileName("nyxapp")  # Must match the .desktop file name
 
     # Check for single instance BEFORE creating any GUI elements
     shared_memory = check_single_instance()
