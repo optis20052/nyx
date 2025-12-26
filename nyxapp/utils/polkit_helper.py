@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class PolkitHelper:
     """Helper for managing PolicyKit rules for passwordless systemctl."""
 
-    POLKIT_RULE_FILE = "/etc/polkit-1/rules.d/90-systemd-tray.rules"
+    POLKIT_RULE_FILE = "/etc/polkit-1/rules.d/50-nyxapp-systemctl.rules"
 
     # PolicyKit rule that allows passwordless systemctl for the current user
     POLKIT_RULE_TEMPLATE = """/* Allow {username} to manage systemd services without password */

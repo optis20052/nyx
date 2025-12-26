@@ -12,13 +12,13 @@ class AutostartHelper:
 
     # XDG autostart directory
     AUTOSTART_DIR = Path.home() / ".config" / "autostart"
-    AUTOSTART_FILE = AUTOSTART_DIR / "nyx.desktop"
+    AUTOSTART_FILE = AUTOSTART_DIR / "nyxapp.desktop"
 
     # System desktop file locations to search
     DESKTOP_FILE_LOCATIONS = [
-        Path("/usr/share/applications/nyx.desktop"),
-        Path("/usr/local/share/applications/nyx.desktop"),
-        Path.home() / ".local" / "share" / "applications" / "nyx.desktop",
+        Path("/usr/share/applications/nyxapp.desktop"),
+        Path("/usr/local/share/applications/nyxapp.desktop"),
+        Path.home() / ".local" / "share" / "applications" / "nyxapp.desktop",
     ]
 
     @staticmethod
@@ -32,14 +32,14 @@ class AutostartHelper:
 
     @staticmethod
     def find_desktop_file() -> Path | None:
-        """Find the installed nyx.desktop file.
+        """Find the installed nyxapp.desktop file.
 
         Returns:
             Path to desktop file if found, None otherwise
         """
         # Check if running from source (development)
-        # Look for nyx.desktop in current directory or parent
-        dev_desktop_file = Path(__file__).parent.parent.parent / "nyx.desktop"
+        # Look for nyxapp.desktop in current directory or parent
+        dev_desktop_file = Path(__file__).parent.parent.parent / "nyxapp.desktop"
         if dev_desktop_file.exists():
             return dev_desktop_file
 
@@ -65,7 +65,7 @@ class AutostartHelper:
             desktop_file = AutostartHelper.find_desktop_file()
             if not desktop_file:
                 error_msg = (
-                    "Could not find nyx.desktop file in any standard location.\n"
+                    "Could not find nyxapp.desktop file in any standard location.\n"
                     "Please ensure the application is properly installed."
                 )
                 logger.error(error_msg)
@@ -93,7 +93,7 @@ class AutostartHelper:
             AutostartHelper.AUTOSTART_FILE.chmod(0o644)
 
             logger.info(f"Autostart enabled: created modified desktop file at {AutostartHelper.AUTOSTART_FILE}")
-            return True, "Autostart enabled. Nyx will start automatically on login."
+            return True, "Autostart enabled. NyxApp will start automatically on login."
 
         except PermissionError as e:
             error_msg = f"Permission denied: {e}"
@@ -115,7 +115,7 @@ class AutostartHelper:
             if AutostartHelper.AUTOSTART_FILE.exists():
                 AutostartHelper.AUTOSTART_FILE.unlink()
                 logger.info(f"Autostart disabled: removed {AutostartHelper.AUTOSTART_FILE}")
-                return True, "Autostart disabled. Nyx will not start automatically on login."
+                return True, "Autostart disabled. NyxApp will not start automatically on login."
             else:
                 # Already disabled
                 logger.info("Autostart was already disabled")

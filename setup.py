@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Setup script for Nyx."""
+"""Setup script for NyxApp."""
 
 from setuptools import setup, find_packages
 from pathlib import Path
@@ -12,18 +12,18 @@ long_description = README.read_text() if README.exists() else ""
 version = "1.0.0"
 
 setup(
-    name="nyx",
+    name="nyxapp",
     version=version,
-    description="Nyx - Manage systemd services from the system tray",
+    description="NyxApp - Manage systemd services from the system tray",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Ali",
     author_email="",
-    url="https://github.com/yourusername/nyx",
+    url="https://github.com/yourusername/nyxapp",
     license="MIT",
     packages=find_packages(),
     package_data={
-        "nyx": [
+        "nyxapp": [
             "resources/icons/*.svg",
             "resources/icons/*.png",
         ],
@@ -35,7 +35,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "nyx=nyx.main:main",
+            "nyxapp=nyxapp.main:main",
         ],
     },
     classifiers=[
@@ -52,10 +52,10 @@ setup(
     ],
     python_requires=">=3.10",
     data_files=[
-        ("share/applications", ["nyx.desktop"]),
+        ("share/applications", ["nyxapp.desktop"]),
         ("share/icons/hicolor/scalable/apps", [
-            "nyx/resources/icons/nyx.svg",
-            "nyx/resources/icons/nyx-symbolic.svg"
+            "nyxapp/resources/icons/nyxapp.svg",
+            "nyxapp/resources/icons/nyxapp-symbolic.svg"
         ]),
     ],
 )
