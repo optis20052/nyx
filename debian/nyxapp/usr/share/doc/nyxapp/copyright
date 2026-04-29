@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: systemd-tray
-Source: https://github.com/yourusername/systemd-tray
+Source: https://github.com/optis20052/systemd-tray
 
 Files: *
 Copyright: 2024 Ali

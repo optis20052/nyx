@@ -19,7 +19,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Ali",
     author_email="",
-    url="https://github.com/yourusername/nyxapp",
+    url="https://github.com/optis20052/nyxapp",
     license="MIT",
     packages=find_packages(),
     package_data={
