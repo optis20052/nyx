@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="nyxapp.svg">icons/nyxapp.svg</file>
+        <file alias="nyxapp-symbolic.svg">icons/nyxapp-symbolic.svg</file>
+        <file alias="nyxapp-light.svg">icons/nyxapp-light.svg</file>
+        <file alias="nyxapp-dark.svg">icons/nyxapp-dark.svg</file>
+    </qresource>
+</RCC>
