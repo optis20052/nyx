@@ -41,7 +41,7 @@
 ### From .deb Package
 
 ```bash
-sudo dpkg -i nyx_1.0.0_all.deb
+sudo dpkg -i nyxapp_1.0.0_all.deb
 sudo apt-get install -f 
 ```
 
@@ -60,16 +60,16 @@ Find "Nyx" in your application menu under System.
 
 ```bash
 # Show management window on startup
-nyx --show-window
+nyxapp --show-window
 
 # Hide main tray icon (only show service icons)
-nyx --no-tray
+nyxapp --no-tray
 
 # Started from autostart (used internally by autostart)
-nyx --startup
+nyxapp --startup
 
 # Window-only mode (no tray icons)
-nyx --show-window --no-tray
+nyxapp --show-window --no-tray
 ```
 
 ## Building from Source
@@ -88,9 +88,9 @@ nyx --show-window --no-tray
 
 ## Configuration
 
-Configuration is stored in `~/.config/nyx/config.yaml`
+Configuration is stored in `~/.config/nyxapp/config.yaml`
 
-Service icons are stored in `~/.config/nyx/icons/`
+Service icons are stored in `~/.config/nyxapp/icons/`
 
 ## Contributing
 
