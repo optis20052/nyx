@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="nyx/resources/icons/nyx.svg" alt="Nyx Logo" width="128" height="128">
+  <img src="nyxapp/resources/icons/nyxapp.svg" alt="Nyx Logo" width="128" height="128">
 
   # Nyx
 
@@ -22,17 +22,17 @@
 ## Screenshots
 
 <div align="center">
-  <img src="nyx/resources/screen/app.png" alt="Nyx Main Window" width="600">
+  <img src="nyxapp/resources/screen/app.png" alt="Nyx Main Window" width="600">
   <p><em>Main management window</em></p>
 </div>
 
 <div align="center">
-  <img src="nyx/resources/screen/tray.jpg" alt="Nyx System Tray" width="400">
+  <img src="nyxapp/resources/screen/tray.jpg" alt="Nyx System Tray" width="400">
   <p><em>System tray integration</em></p>
 </div>
 
 <div align="center">
-  <img src="nyx/resources/screen/add_service.jpg" alt="Add Service Dialog" width="500">
+  <img src="nyxapp/resources/screen/add_service.jpg" alt="Add Service Dialog" width="500">
   <p><em>Add service dialog</em></p>
 </div>
 
